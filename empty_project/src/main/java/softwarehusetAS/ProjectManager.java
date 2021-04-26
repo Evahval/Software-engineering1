@@ -2,8 +2,8 @@ package softwarehusetAS;
  
 public class ProjectManager extends Employee{
 
-	public ProjectManager(double hours, String initials) {
-		super(hours, initials);
+	public ProjectManager(String initials) {
+		super(initials);
 		
 	}
 	

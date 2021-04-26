@@ -39,4 +39,8 @@ public class Activity {
 	public void staffActivity(Employee employee) {
 		employees.add(employee);
 	}
+	
+	public String toString() {
+		return name;
+	}
 }
