@@ -6,6 +6,7 @@ public class Employee {
 	private double hours;
 	private String initials;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
+	private boolean isAvailability;
 	
 	public Employee(double hours, String initials) {
 		this.hours = hours;
@@ -13,6 +14,21 @@ public class Employee {
 	}
 	
 	public void updateHours(int hours, Activity activity) {
-		
+		activity.addToHours(hours);
+	}
+	
+	public boolean checkAvailability() {
+		int activeActivities = 0;
+		for (int i = 0 ; i < activities.size() ; i++) {
+			if (activities.get(i).isActivityActive()) {
+				activeActivities ++;
+			}
+		}
+		if (activeActivities < 10) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

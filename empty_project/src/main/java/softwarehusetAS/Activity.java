@@ -9,7 +9,8 @@ public class Activity {
 	private int startWeek;
 	private int endWeek;
 	private boolean isActive;
-	private ArrayList<Employee> employee = new ArrayList<Employee>(); 
+	private ArrayList<Employee> employees = new ArrayList<Employee>(); 
+	private double hoursOnActivity;
 	
 	public Activity(String name, boolean isActive) {
 		this.name = name;
@@ -26,5 +27,16 @@ public class Activity {
 	
 	public void setEndWeek(int endWeek) {
 		this.endWeek = endWeek;
+	}
+	
+	public void addToHours(double hours) {
+		hoursOnActivity =+ hours;
+	}
+	public boolean isActivityActive() {
+		return isActive;
+	}
+	
+	public void staffActivity(Employee employee) {
+		employees.add(employee);
 	}
 }

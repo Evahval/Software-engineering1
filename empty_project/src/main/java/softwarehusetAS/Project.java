@@ -25,4 +25,8 @@ public class Project {
 	public Employee getManager() {
 		return projectManager;
 	}
+	
+	public void addActivityProject(Activity activity) {
+		activities.add(activity);
+	}
 }
