@@ -3,7 +3,6 @@ Feature: Assigning a project manager to a project.
     Actor: Softwarehuset A/S
     
     Scenario: Employee is assigned as a project manager.
-	Given a project exists
-	And an employee is available
+	Given The employee is available
 	When Softwarehuset A/S appoints an employee as project manager
 	Then the employee is assigned to the projec as the project manager.

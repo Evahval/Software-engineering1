@@ -6,7 +6,7 @@ public class Employee {
 	private double hours = 0;
 	private String initials;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
-	private boolean isAvailability;
+	private boolean hasPermission = false;
 	
 	public Employee(String initials) {
 		this.initials = initials;

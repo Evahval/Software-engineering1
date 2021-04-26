@@ -32,7 +32,6 @@ public class CreateProjectSteps {
 
 	@Then("a project is created with a name, a serial number and year.")
 	public void a_project_is_created_with_a_name_a_serial_number_and_year() {
-
 	    assertTrue(company.getProject().contains(project1));
 	}
 }
