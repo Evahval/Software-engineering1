@@ -28,9 +28,11 @@ public class Project {
 	
 	}
 	
-	public void setManager(Employee employee) {
+	public ProjectManager setManager(Employee employee) {
 		ProjectManager projectManager = new ProjectManager(employee.getInitials());
 		this.projectManager = projectManager;
+		return projectManager;
+		
 	}
 	
 	public Employee getManager() {

@@ -12,7 +12,7 @@ public class Activity {
 	private ArrayList<Employee> employees = new ArrayList<Employee>(); 
 	private double hoursOnActivity;
 	
-	public Activity(String name, boolean isActive, int startWe) {
+	public Activity(String name, boolean isActive) {
 		this.name = name;
 		this.isActive = isActive;
 	}

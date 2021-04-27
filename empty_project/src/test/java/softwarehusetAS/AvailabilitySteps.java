@@ -10,7 +10,8 @@ public class AvailabilitySteps {
 
 	private ProjectManager projectManager;
 	private Project project1;
-	private Employee employee;
+	private Employee employee1;
+	private Employee employee2;
 	private ErrorMessageHolder errorMessageHolder;
 	private Company company;
 	
@@ -21,7 +22,9 @@ public class AvailabilitySteps {
 	
 	@Given("a project manager {string} of the project {string} {int} wants to check if employee is available")
 	public void a_project_manager_of_the_project_wants_to_check_if_employee_is_available(String managerName, String projectName, int projectNumber) {
-	    
+	    project1 = company.addProject(projectName, projectNumber);
+	    employee1 = company.addEmployee(projectName);
+	    project1.setManager(employee1);
 	}
 
 	@Given("an employee {string} is working on less than {int} activities")
