@@ -8,8 +8,9 @@ public class AssgnProjectManagerSteps {
 	
 	private Company company;
 	private Employee employee;
+	private Project project1;
 	
-	public void AssignProjectManagerSteps(Company company) {
+	public AssgnProjectManagerSteps(Company company) {
 		this.company=company;
 	}
 	
@@ -21,7 +22,7 @@ public class AssgnProjectManagerSteps {
 
 	@Then("Softwarehuset A/S assigns the employee as the project manager of the project.")
 	public void the_employee_is_assigned_to_the_projec_as_the_project_manager() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   project1.setManager(employee);
+	   assertEquals(employee,project1.getManager());
 	}
 }
