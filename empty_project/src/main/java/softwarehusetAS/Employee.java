@@ -18,6 +18,9 @@ public class Employee {
 	
 	public boolean checkAvailability() {
 		int activeActivities = 0;
+		if (activities.isEmpty()) {
+			return true;
+		}
 		for (int i = 0 ; i < activities.size() ; i++) {
 			if (activities.get(i).isActivityActive()) {
 				activeActivities ++;

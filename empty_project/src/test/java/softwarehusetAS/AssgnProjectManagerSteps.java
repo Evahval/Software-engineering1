@@ -22,12 +22,20 @@ public class AssgnProjectManagerSteps {
 		
 			}
 	
+	
+	@Given("The employee {string}")
+	public void the_employee_and_the_project_and(String initials) {
+		employee = company.addEmployee(initials);
+	}
+	
+	@Given("the project {string} with serial number {int}")
+	public void the_project_with_serial_number(String string, int int1) {
+	project1= company.addProject(string,int1);
+	}
 
-	@Given("The employee {String} is available and there is a project {String} {int}")
-	public void an_employee_is_available(String initials, String projectName, int projectNumber) {
-		project1 = new Project(projectName, projectNumber);
-		employee = new Employee(initials);
-		assertTrue(employee.checkAvailability());
+	@Given("The employee is available")
+	public void the_employee_is_available() {
+	    assertTrue(employee.checkAvailability());
 	}
 	
 	@When("Softwarehuset A\\/S appoints an employee as project manager")

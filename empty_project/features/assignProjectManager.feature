@@ -3,6 +3,8 @@ Feature: Assigning a project manager to a project.
     Actor: Softwarehuset A/S
     
     Scenario: Employee is assigned as a project manager.
-	Given The employee "KLNJ" is available and there is a project "Project" 090807
+	Given The employee "KLNJ"
+	And the project "project" with serial number 123
+	And The employee is available
 	When Softwarehuset A/S appoints an employee as project manager
 	Then the employee is assigned to the project as the project manager.
