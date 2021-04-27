@@ -16,8 +16,8 @@ public class CreateProjectSteps {
 	}
 	
 	@SuppressWarnings("deprecation")
-	@Given("Softwarehuset A\\/S is assigned a new project with name {string} and serial number {int}")
-	public void softwarehuset_a_s_is_assigned_a_new_project_with_name_and_serial_number(String name, int number) {
+	@Given("Softwarehuset A\\/S is assigned a new project with name {string} and serial number {string}")
+	public void softwarehuset_a_s_is_assigned_a_new_project_with_name_and_serial_number(String name, String number) {
 		project1 = company.addProject(name, number);
 		assertThat(project1.getName(),is(equalTo(name)));
 		assertThat(project1.getProjectNumber(),is(equalTo(number)));

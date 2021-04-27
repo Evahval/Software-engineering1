@@ -16,6 +16,7 @@ public class AssgnProjectManagerSteps {
 	private Company company;
 	private Employee employee;
 	private Project project1;
+	private ProjectManager projectManager;
 	
 	public AssgnProjectManagerSteps(Company company) {
 		this.company = company;
@@ -23,12 +24,18 @@ public class AssgnProjectManagerSteps {
 			}
 	
 	
-	@Given("The employee {string} and the project {string} and {int}")
-	public void the_employee_and_the_project_and(String initials, String projectName, int projectNumber) {
+	@Given("The employee {string}")
+	public void the_employee_and_the_project_and(String initials) {
 		employee = company.addEmployee(initials);
-		project1 = company.addProject(projectName, projectNumber);
+		
 	}
 
+	@Given("the project {string} with serial number {string}")
+	public void the_project_with_serial_number(String projectName, String projectNumber) {
+	    project1 = company.addProject(projectName, projectNumber);
+	}
+
+	
 	@Given("The employee is available")
 	public void the_employee_is_available() {
 	    assertTrue(employee.checkAvailability());
@@ -36,7 +43,7 @@ public class AssgnProjectManagerSteps {
 	
 	@When("Softwarehuset A\\/S appoints an employee as project manager")
 	public void softwarehuset_a_s_appoints_an_employee_as_project_manager() {
-		project1.setManager(employee);
+		projectManager = project1.setManager(employee);
 	}
 	
 

@@ -4,7 +4,7 @@ Feature: Assigning a project manager to a project.
     
     Scenario: Employee is assigned as a project manager.
 	Given The employee "KLNJ"
-	And the project "project" with serial number 123
+	And the project "project" with serial number "090400"
 	And The employee is available
 	When Softwarehuset A/S appoints an employee as project manager
 	Then the employee is assigned to the project as the project manager.

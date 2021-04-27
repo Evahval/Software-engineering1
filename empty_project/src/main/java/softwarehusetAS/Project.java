@@ -4,13 +4,14 @@ import java.util.*;
 public class Project {
 
 	private String projectName;
-	private int projectNumber;
+	private String projectNumber;
 	private ProjectManager projectManager;
+	private Employee projectManager1;
 	private int startWeek;
 	private int endWeek;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
 	
-	public Project(String projectName, int projectNumber) {
+	public Project(String projectName, String projectNumber) {
 		this.projectName = projectName;
 		this.projectNumber = projectNumber;
 	}
@@ -31,12 +32,13 @@ public class Project {
 	public ProjectManager setManager(Employee employee) {
 		ProjectManager projectManager = new ProjectManager(employee.getInitials());
 		this.projectManager = projectManager;
+		projectManager1 = employee;
 		return projectManager;
 		
 	}
 	
 	public Employee getManager() {
-		return projectManager;
+		return projectManager1;
 	}
 	
 	public void addActivityProject(Activity activity) {
@@ -46,7 +48,7 @@ public class Project {
 	public String getName() {
 		return projectName;
 	}
-	public int getProjectNumber() {
+	public String getProjectNumber() {
 		return projectNumber;
 	}
 	
@@ -58,7 +60,5 @@ public class Project {
 		return endWeek;
 	}
 	
-	public String toString() {
-		return projectName + " " + projectNumber;
-	}
+	
 }

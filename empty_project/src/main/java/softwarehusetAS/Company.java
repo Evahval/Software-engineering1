@@ -13,7 +13,7 @@ public class Company {
 		return employees;
 	}
 
-	public Project addProject(String name, int serialNumber) {
+	public Project addProject(String name, String serialNumber) {
 		Project project1 = new Project(name,serialNumber);
 		projects.add(project1);
 		return project1;
