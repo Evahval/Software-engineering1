@@ -21,8 +21,14 @@ public class ProjectManager extends Employee{
 		}
 	}
 	
-	//Speciel tilladelse ikke medtaget
+	
 	public boolean checkEmployeeAvailability(Employee employee) {
 		return employee.checkAvailability();
+	}
+	public void giveEmployeePermission(Employee employee) {
+		employee.givePermission();
+	}
+	public void takeAwayEmployeePermission(Employee employee) {
+		employee.takeAwayPermission();
 	}
 }

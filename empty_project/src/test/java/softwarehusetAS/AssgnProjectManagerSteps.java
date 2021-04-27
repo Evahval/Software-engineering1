@@ -23,14 +23,10 @@ public class AssgnProjectManagerSteps {
 			}
 	
 	
-	@Given("The employee {string}")
-	public void the_employee_and_the_project_and(String initials) {
+	@Given("The employee {string} and the project {string} and {int}")
+	public void the_employee_and_the_project_and(String initials, String projectName, int projectNumber) {
 		employee = company.addEmployee(initials);
-	}
-	
-	@Given("the project {string} with serial number {int}")
-	public void the_project_with_serial_number(String string, int int1) {
-	project1= company.addProject(string,int1);
+		project1 = company.addProject(projectName, projectNumber);
 	}
 
 	@Given("The employee is available")

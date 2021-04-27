@@ -7,17 +7,19 @@ public class Employee {
 	private String initials;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
 	private boolean hasPermission = false;
+	private int activeActivities = 0;
+	private int approvedActivities = 10;
 	
 	public Employee(String initials) {
 		this.initials = initials;
 	}
 	
-	public void updateHours(int hours, Activity activity) {
+	public void updateHours(double hours, Activity activity) {
 		activity.addToHours(hours);
 	}
 	
 	public boolean checkAvailability() {
-		int activeActivities = 0;
+		activeActivities = 0;
 		if (activities.isEmpty()) {
 			return true;
 		}
@@ -26,7 +28,7 @@ public class Employee {
 				activeActivities ++;
 			}
 		}
-		if (activeActivities < 10) {
+		if (activeActivities < approvedActivities) {
 			return true;
 		}
 		else {
@@ -36,6 +38,28 @@ public class Employee {
 	
 	public String getInitials() {
 		return initials;
+	}
+	
+	public void assignActivity(Activity activity){
+		if (this.checkAvailability()){
+			activities.add(activity);
+		}
+		else{
+			System.out.println("Employee is unavailable");
+		}
+	}
+	
+	public void givePermission() {
+		if (hasPermission=false) {
+			approvedActivities = 20;
+			hasPermission = true;
+		}
+	}
+	public void takeAwayPermission() {
+		if (hasPermission=true) {
+			approvedActivities = 10;
+			hasPermission = false;
+		}
 	}
 	
 }
