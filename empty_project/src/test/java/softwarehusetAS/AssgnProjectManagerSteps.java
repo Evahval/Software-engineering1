@@ -1,22 +1,23 @@
 package softwarehusetAS;
 import io.cucumber.java.en.*;
 
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 import java.util.Collections;
 public class AssgnProjectManagerSteps {
 	
-	private Company company;
 	private Employee employee;
 	private Project project1;
 	
-	public AssgnProjectManagerSteps(Company company) {
-		this.company=company;
+	public AssgnProjectManagerSteps(Employee employee, Project project) {
+		this.employee = employee;
+		project1 = project;
 	}
 	
 
 	@Given("The employee is available")
-	public void an_employee_is_available(Employee employee) {
+	public void an_employee_is_available() {
 		assertTrue(employee.checkAvailability());
 	}
 
