@@ -15,15 +15,16 @@ public class ProjectManager extends Employee{
 	public void staffActivity(Employee employee, Activity activity) {
 		if (checkEmployeeAvailability(employee)) {
 			activity.staffActivity(employee);
+			employee.assignActivity(activity);
+			
 		}
 		else {
 			System.out.println("Employee is unavailable");
 		}
 	}
 	
-	
 	public boolean checkEmployeeAvailability(Employee employee) {
-		return employee.checkAvailability();
+		return employee.checkAvailability1();
 	}
 	public void giveEmployeePermission(Employee employee) {
 		employee.givePermission();
@@ -31,4 +32,5 @@ public class ProjectManager extends Employee{
 	public void takeAwayEmployeePermission(Employee employee) {
 		employee.takeAwayPermission();
 	}
+	
 }

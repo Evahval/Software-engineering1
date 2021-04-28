@@ -1,5 +1,5 @@
 Feature: Register hour on an active activity
-    Actor: Employee
+   Actor: Employee
 
 Scenario: the employee registers hours on an activity that they are assigned
     Given there is an employee "EHA" 
