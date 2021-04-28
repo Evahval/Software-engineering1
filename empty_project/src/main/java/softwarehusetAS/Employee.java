@@ -96,4 +96,8 @@ public class Employee {
 	public int getApprovedActivities() {
 		return approvedActivities;
 	}
+	
+	public ArrayList<Activity> getActivities(){
+		return activities;
+	}
 }
