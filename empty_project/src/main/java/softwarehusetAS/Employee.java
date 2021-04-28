@@ -54,28 +54,33 @@ public class Employee {
 	}
 	
 	public void givePermission() {
-		if (hasPermission==false) {
+		if (hasPermission == false) {
 			hasPermission = true;
 			approvedActivities = 20;
 			
 		}
 	}
+	
 	public void takeAwayPermission() {
-		if (hasPermission==true) {
+		if (hasPermission == true) {
 			approvedActivities = 10;
 			hasPermission = false;
 		}
 	
 	}
+	
 	public boolean hasPermission() {
 		return hasPermission;
 	}
+	
 	public void setActiveActivities(int int1) {
 		activeActivities1 = int1;
 	}
+	
 	public int getActiveActivities() {
 		return activeActivities1;
 	}
+	
 	public boolean checkAvailability1() {
 		
 		if (activeActivities1 < approvedActivities) {

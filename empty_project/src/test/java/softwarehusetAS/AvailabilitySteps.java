@@ -34,7 +34,7 @@ public class AvailabilitySteps {
 
 	@Then("the employee is available")
 	public void the_employee_is_available() {
-	   assertTrue(employee1.checkAvailability2());
+	   assertTrue(projectManager.checkEmployeeAvailability(employee1));
 	}
 
 	@Given("an employee {string} is currently working on {int} activities")
@@ -59,12 +59,10 @@ public class AvailabilitySteps {
 
 	@Then("the system will assign the employee as unavailable")
 	public void the_system_will_assign_the_employee_as_unavailable() {
-		assertFalse(employee1.checkAvailability2());
+		assertFalse(projectManager.checkEmployeeAvailability(employee1));
 		
 	}
-
 	
-
 	@Given("the project manager {string} of the project {string} {string} wants to check if employee {string} is available")
 	public void the_project_manager_of_the_project_wants_to_check_if_employee_is_available(String managerName, String projectName, String projectNumber, String employee) {
 	    employee1 = company.addEmployee(employee);
@@ -72,6 +70,7 @@ public class AvailabilitySteps {
 	    employeeProjectManager = company.addEmployee(managerName);
 	    projectManager = project1.setManager(employeeProjectManager);
 	}
+	
 	@Given("the employee is currently working on {int} activities")
 	public void the_employee_is_currently_working_on_activities(int activities) {
 		employee1.setActiveActivities(activities);
@@ -87,7 +86,7 @@ public class AvailabilitySteps {
 	@Then("the system will assign the employee as available")
 	public void the_system_will_assign_the_employee_as_available() {
 		projectManager.giveEmployeePermission(employee1);
-	   assertTrue(employee1.checkAvailability2());
+	   assertTrue(projectManager.checkEmployeeAvailability(employee1));
 	}
 
 }
