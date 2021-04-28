@@ -49,6 +49,22 @@ public class Activity {
 		return hoursOnActivity;
 	}
 	
+	public int getStartWeek(){
+		return startWeek;
+	}
+	
+	public int getEndWeek(){
+		return endWeek;
+	}
+	
+	public int getTimeBudget(){
+		return timeBudget;
+	}
+	
+	public void setIsActive(){
+		isActive = !isActive;
+	}
+	
 	public ArrayList<Employee> getEmployees(){
 		return employees;
 	}

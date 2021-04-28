@@ -24,9 +24,8 @@ public class Project {
 		this.endWeek = endWeek;
 	}
 	
-	public ArrayList<Activity> getActivity(Activity activity) {
+	public ArrayList<Activity> getActivity() {
 		return activities;
-	
 	}
 	
 	public ProjectManager setManager(Employee employee) {

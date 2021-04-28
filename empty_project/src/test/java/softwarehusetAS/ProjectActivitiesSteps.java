@@ -12,116 +12,87 @@ public class ProjectActivitiesSteps {
 	private ProjectManager projectManager;
 	private Project project1;
 	private Employee employee;
+	private Employee employeeProjectManager;
+	private Company company;
+	private Activity activity;
 	
-	public ProjectActivitiesSteps(Employee employee, Project project1){
-		this.employee = employee;
-		this.project1 = project1;
+	public ProjectActivitiesSteps(Company company){
+		this.company = company;
 	}
 	
-@Given("A project manager has a project")
-public void a_project_manager_has_a_project() {
-    assertEquals(projectManager, project1.getManager());
-}
+	@Given("A project manager {string} has a project {string} {string}")
+	public void a_project_manager_has_a_project(String managerName, String projectName, String projectNumber) {
+		project1 = company.addProject(projectName, projectNumber);
+	    employeeProjectManager = company.addEmployee(managerName);
+	    projectManager = project1.setManager(employeeProjectManager);
+	}
 
-@When("the project mangager creates an activity with a beginning week, an ending week and an estimated time")
-public void the_project_mangager_creates_an_activity_with_a_beginning_week_an_ending_week_and_an_estimated_time() {
-    
-}
+	@When("the project mangager creates an activity {string}")
+	public void the_project_mangager_creates_an_activity(String activityName) {
+	   activity =  projectManager.addActivity(project1, activityName, true);
+	}
 
-@Then("an activity is created")
-public void an_activity_is_created() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Then("an activity is created")
+	public void an_activity_is_created() {
+	    project1.getActivity().contains(activity);
+	}
 
-@Given("An activity has an estimated time of {int} hours")
-public void an_activity_has_an_estimated_time_of_hours(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Given("the project manager has added an activity {string}")
+	public void the_project_manager_has_added_an_activity(String activityName) {
+	    activity = projectManager.addActivity(project1, activityName, true);
+	}
 
-@When("the project manager corrects the estimated time to {int} hours")
-public void the_project_manager_corrects_the_estimated_time_to_hours(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@When("the project manager add a beginning week {int} and an ending week {int}")
+	public void the_project_manager_add_a_beginning_week_and_an_ending_week(int int1, int int2) {
+		activity.setStartWeek(int1);
+		activity.setEndWeek(int2);
+	}
 
-@Then("the activity has an estimated time of {int} hours")
-public void the_activity_has_an_estimated_time_of_hours(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Then("the activity has a beginning week and ending week")
+	public void the_activity_has_a_beginning_week_and_ending_week() {
+	    assertTrue(activity.getStartWeek() != 0);
+		assertTrue(activity.getEndWeek() != 0);
+	}
 
-@Given("An activity is inactive")
-public void an_activity_is_inactive() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@When("the project manager adds an estimated amount of weeks {int} as a timebudget")
+	public void the_project_manager_adds_an_estimated_amount_of_weeks_as_a_timebudget(int estimateTime) {
+	    activity.setTimeBudget(estimateTime);
+	}
+	
+	@Then("the activity has a timebudget of x amounts of weeks")
+	public void the_activity_has_a_timebudget_of_x_amounts_of_weeks() {
+	    assertTrue(activity.getTimeBudget() != 0);
+	}
 
-@Given("the activity has an estimated time of {int} hours")
-public void the_activity_has_an_estimated_time_of_hours(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Given("An active activity has an estimated time of {int} hours")
+	public void an_active_activity_has_an_estimated_time_of_hours(int int1) {
+	    activity.setTimeBudget(int1);
+	}
 
-@When("the project manager updates the estimated time for the activity to {int} hours")
-public void the_project_manager_updates_the_estimated_time_for_the_activity_to_hours(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@When("the project manager corrects the estimated time to {int} hours")
+	public void the_project_manager_corrects_the_estimated_time_to_hours(int int1) {
+		activity.setTimeBudget(int1);
+	}
 
-@Given("a project manager has to staff an activity.")
-public void a_project_manager_has_to_staff_an_activity() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Then("the activity has an estimated time of {int} hours")
+	public void the_activity_has_an_estimated_time_of_hours(int int1) {
+		assertEquals(int1, activity.getTimeBudget());
+	}
 
-@Given("an employee can work up to {int} activities at once.")
-public void an_employee_can_work_up_to_activities_at_once(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Given("An activity is inactive")
+	public void an_activity_is_inactive() {
+	    activity.setIsActive();
+	    assertFalse(activity.isActivityActive());
+	}
 
-@Then("an employee can be added to an acitivty if they are working on less than {int} activities at that time.")
-public void an_employee_can_be_added_to_an_acitivty_if_they_are_working_on_less_than_activities_at_that_time(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	@Given("the inactive activity has an estimated time of {int} hours")
+	public void the_inactive_activity_has_an_estimated_time_of_hours(int int1) {
+	    activity.setTimeBudget(int1);
+	}
 
-@Given("an employee is currently working on {int} activities.")
-public void an_employee_is_currently_working_on_activities(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Given("the project manager wants to add that employee to another activity.")
-public void the_project_manager_wants_to_add_that_employee_to_another_activity() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Given("the employee isn't approved to work on more than {int} activities.")
-public void the_employee_isn_t_approved_to_work_on_more_than_activities(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Then("the system will provide an error-message stating that the employee is not available for a new activity.")
-public void the_system_will_provide_an_error_message_stating_that_the_employee_is_not_available_for_a_new_activity() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Given("the employee is approved to work on up to {int} activities.")
-public void the_employee_is_approved_to_work_on_up_to_activities(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Then("the system will assign the employee as available for a new activity.")
-public void the_system_will_assign_the_employee_as_available_for_a_new_activity() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
+	@When("the project manager updates the estimated time for the activity to {int} hours")
+	public void the_project_manager_updates_the_estimated_time_for_the_activity_to_hours(int int1) {
+	    activity.setTimeBudget(int1);
+	}
+	
 }
