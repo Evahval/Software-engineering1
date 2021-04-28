@@ -47,11 +47,12 @@ public class staffActivitySteps {
 	@Given("the employee {string} is unavailable")
 	public void the_employee_is_unavailable(String name) {
 	    employee = company.addEmployee(name);
+	    employee.setActiveActivities(10);
 	}
 
 	@Then("the employee is not assigned to the activity")
 	public void the_employee_is_not_assigned_to_the_activity() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		assertFalse(activity.getEmployees().contains(employee));
+	    assertFalse(employee.getActivities().contains(activity));
 	}
 }
