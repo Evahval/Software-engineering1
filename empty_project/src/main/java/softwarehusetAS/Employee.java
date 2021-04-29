@@ -7,6 +7,7 @@ public class Employee {
 	private double hours = 0;
 	private String initials;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
+	private ArrayList<Activity> activitiesAssisting = new ArrayList<Activity>();
 	private boolean hasPermission = false;
 	private int activeActivities1 = 0;
 	private int approvedActivities = 10;
@@ -37,20 +38,13 @@ public class Employee {
 		}
 	}
 	
-	public String getInitials() {
-		return initials;
-	}
-	
 	public void assignActivity(Activity activity){
-		if (this.checkAvailability()){
-			activities.add(activity);
-			if (activity.isActivityActive()) {
-				activeActivities1++;
-			}
-		}
-		else{
-			System.out.println("Employee is unavailable");
-		}
+	if(this.checkAvailability1()){
+		activities.add(activity);
+		if (activity.isActivityActive()) {
+        				activeActivities1++;
+       		}
+		}		
 	}
 	
 	public void givePermission() {
@@ -87,10 +81,12 @@ public class Employee {
 			return true;
 		}
 		else {
-			
 			return false;
-			
 		}
+	}
+	
+	public String getInitials() {
+		return initials;
 	}
 	
 	public int getApprovedActivities() {
@@ -99,5 +95,8 @@ public class Employee {
 	
 	public ArrayList<Activity> getActivities(){
 		return activities;
+	}
+	public ArrayList<Activity> getAssisting(){
+	    return activitiesAssisting;
 	}
 }

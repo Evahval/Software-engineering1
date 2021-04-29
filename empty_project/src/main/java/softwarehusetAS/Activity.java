@@ -10,6 +10,7 @@ public class Activity {
 	private int endWeek;
 	private boolean isActive;
 	private ArrayList<Employee> employees = new ArrayList<Employee>(); 
+	private ArrayList<Employee> employeesAssisting = new ArrayList<Employee>();
 	private double hoursOnActivity;
 	
 	public Activity(String name, boolean isActive) {
@@ -30,14 +31,16 @@ public class Activity {
 	}
 	
 	public void addToHours(double hours) {
-		hoursOnActivity =+ hours;
+		hoursOnActivity = hoursOnActivity + hours;
 	}
 	public boolean isActivityActive() {
 		return isActive;
 	}
 	
-	public void staffActivity(Employee employee) {
-		employees.add(employee);
+	public void assignActivity(Employee employee) {
+	    if(employee.checkAvailability1()){
+	         employees.add(employee);
+	    }
 		
 	}
 	
@@ -67,5 +70,9 @@ public class Activity {
 	
 	public ArrayList<Employee> getEmployees(){
 		return employees;
+	}
+	
+	public ArrayList<Employee> getEmployeesAssisting(){
+		return employeesAssisting;
 	}
 }

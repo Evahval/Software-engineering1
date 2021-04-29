@@ -15,7 +15,7 @@ public class ProjectManager extends Employee{
 	
 	public void staffActivity(Employee employee, Activity activity) {
 		if (checkEmployeeAvailability(employee)) {
-			activity.staffActivity(employee);
+			activity.assignActivity(employee);
 			employee.assignActivity(activity);
 			
 		}
