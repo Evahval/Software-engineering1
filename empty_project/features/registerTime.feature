@@ -3,14 +3,14 @@ Feature: Register hour on an active activity
 
 Scenario: the employee registers hours on an activity that they are assigned
     Given there is an employee "EHA" 
-	And there is a project "project" 123
-	And there is an active activity "activity" 
-	And the employee is assigned the activity 
+	And the employee is assigned an active project "project" "020202"
     When the employee registers that they used 3 hours on the activity that day
     Then the 3 hours are registered 
 
  Scenario: The employee updates the hours they used on the activity
-    Given that the activity is active
+ 	Given there is an employee "EHA" 
+	And there is a project "project" "020202"
+	And there is an active activity "activity" 
     When the employee update that they have used 5 hours on the activity that day
     Then the hours used that day is updated to 5
 
@@ -26,7 +26,7 @@ Scenario: the employee registers hours on an activity that they are assigned
     Then there comes an error message "the activity is not active" 
     
  Scenario: Employee has 10 or more activities.
-	When the employee registers hours.
-	And the employee has 10 or more activities.
+	Given the employee has 10 or more activities.
 	And the employee has not been allowed to have more activities.
+	When the employee registers hours.
 	Then the system provides an error message, that the employee can't register the hours.

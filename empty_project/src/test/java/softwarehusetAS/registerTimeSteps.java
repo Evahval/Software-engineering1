@@ -27,9 +27,9 @@ public class registerTimeSteps {
 	    employee = company.addEmployee(string);
 	}
 
-	@Given("there is a project {string} {int}")
-	public void there_is_a_project(String string, Integer int1) {
-    	project1 = company.addProject(string, int1);
+	@Given("there is a project {string} {string}")
+	public void there_is_a_project(String name, String number) {
+    	project1 = company.addProject(name, number);
 	}
 
 	@Given("there is an active activity {string}")
