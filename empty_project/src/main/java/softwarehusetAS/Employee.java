@@ -1,7 +1,7 @@
 package softwarehusetAS;
 
 import java.util.ArrayList;
-
+import softwarehusetAS.OperationNotAllowedException;
 
 public class Employee {
 	private double hours = 0;
@@ -16,11 +16,23 @@ public class Employee {
 		this.initials = initials;
 	}
 	
-	public void updateHours(double hours, Activity activity) {
-		activity.addToHours(hours);
+	public void updateHours(double before, double after, Activity activity) throws OperationNotAllowedException  {
+		if (!(activity.isActivityActive() && this.checkAvailability1())) {
+				throw new OperationNotAllowedException(" ");
+		} else {
+			double newHours = after - before;
+			activity.addToHours(newHours);
+		}
+	}
+	public void addHours(double hours, Activity activity) throws OperationNotAllowedException {
+		if(!(activity.isActivityActive() && this.checkAvailability1())){
+			throw new OperationNotAllowedException("");
+		} else{
+			activity.addToHours(hours);
+		}
 	}
 	
-	public boolean checkAvailability() {
+	/* public boolean checkAvailability() {
 		int activeActivities = 0;
 		if (activities.isEmpty()) {
 			return true;
@@ -36,7 +48,7 @@ public class Employee {
 		else {
 			return false;
 		}
-	}
+	}*/
 	
 	public void assignActivity(Activity activity){
 	if(this.checkAvailability1()){

@@ -38,7 +38,7 @@ public class AssgnProjectManagerSteps {
 	
 	@Given("The employee is available")
 	public void the_employee_is_available() {
-	    assertTrue(employee.checkAvailability());
+	    assertTrue(employee.checkAvailability1());
 	}
 	
 	@When("Softwarehuset A\\/S appoints an employee as project manager")

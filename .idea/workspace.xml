@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a23c867-d7c1-4f13-817f-8ee914daa31f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/empty_project/features/registerTime.feature" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/features/registerTime.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/AssgnProjectManagerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/AssgnProjectManagerSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/registerTimeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/registerTimeSteps.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rpp7iagE7Qd3kamdOk0BXCqIoD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/empty_project" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Software-engineering1" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a23c867-d7c1-4f13-817f-8ee914daa31f" name="Default Changelist" comment="" />
+      <created>1619682719718</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619682719718</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

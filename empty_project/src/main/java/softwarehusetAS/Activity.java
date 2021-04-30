@@ -11,7 +11,7 @@ public class Activity {
 	private boolean isActive;
 	private ArrayList<Employee> employees = new ArrayList<Employee>(); 
 	private ArrayList<Employee> employeesAssisting = new ArrayList<Employee>();
-	private double hoursOnActivity;
+	private double hoursOnActivity = 0;
 	
 	public Activity(String name, boolean isActive) {
 		this.name = name;
