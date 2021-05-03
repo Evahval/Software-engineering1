@@ -17,7 +17,7 @@ public class Employee {
 	}
 	
 	public void updateHours(double before, double after, Activity activity) throws OperationNotAllowedException  {
-		if (!(activity.isActivityActive() && this.checkAvailability1())) {
+		if (!(activity.isActivityActive() && this.checkAvailability())) {
 				throw new OperationNotAllowedException(" ");
 		} else {
 			double newHours = after - before;
@@ -25,14 +25,14 @@ public class Employee {
 		}
 	}
 	public void addHours(double hours, Activity activity) throws OperationNotAllowedException {
-		if(!(activity.isActivityActive() && this.checkAvailability1())){
+		if(!(activity.isActivityActive() && this.checkAvailability())){
 			throw new OperationNotAllowedException("");
 		} else{
 			activity.addToHours(hours);
 		}
 	}
 	
-	/* public boolean checkAvailability() {
+	 public boolean checkAvailability() {
 		int activeActivities = 0;
 		if (activities.isEmpty()) {
 			return true;
@@ -48,13 +48,13 @@ public class Employee {
 		else {
 			return false;
 		}
-	}*/
+	}
 	
 	public void assignActivity(Activity activity){
-	if(this.checkAvailability1()){
+	if(this.checkAvailability()){
 		activities.add(activity);
 		if (activity.isActivityActive()) {
-        				activeActivities1++;
+        			activeActivities1++;
        		}
 		}		
 	}
@@ -79,14 +79,14 @@ public class Employee {
 		return hasPermission;
 	}
 	
-	public void setActiveActivities(int int1) {
+	/*public void setActiveActivities(int int1) {
 		activeActivities1 = int1;
-	}
+	}*/
 	
 	public int getActiveActivities() {
 		return activeActivities1;
 	}
-	
+	/*
 	public boolean checkAvailability1() {
 		
 		if (activeActivities1 < approvedActivities) {
@@ -95,7 +95,7 @@ public class Employee {
 		else {
 			return false;
 		}
-	}
+	}*/
 	
 	public String getInitials() {
 		return initials;

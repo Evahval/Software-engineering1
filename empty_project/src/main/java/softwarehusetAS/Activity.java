@@ -38,7 +38,7 @@ public class Activity {
 	}
 	
 	public void assignActivity(Employee employee) {
-	    if(employee.checkAvailability1()){
+	    if(employee.checkAvailability()){
 	         employees.add(employee);
 	    }
 		
@@ -65,7 +65,12 @@ public class Activity {
 	}
 	
 	public void setIsActive(){
-		isActive = !isActive;
+		isActive = false;
+		for (Employee e : employees) {
+			e.getActivities().remove(this);
+			
+		}
+		
 	}
 	
 	public ArrayList<Employee> getEmployees(){

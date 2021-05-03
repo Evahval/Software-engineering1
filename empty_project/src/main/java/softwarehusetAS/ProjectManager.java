@@ -25,7 +25,7 @@ public class ProjectManager extends Employee{
 	}
 	
 	public boolean checkEmployeeAvailability(Employee employee) {
-		return employee.checkAvailability1();
+		return employee.checkAvailability();
 	}
 	public void giveEmployeePermission(Employee employee) {
 		employee.givePermission();

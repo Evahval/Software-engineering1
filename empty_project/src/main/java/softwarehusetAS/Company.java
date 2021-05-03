@@ -24,5 +24,4 @@ public class Company {
 		employees.add(employee1);
 		return employee1;
 	}
-	
 }
