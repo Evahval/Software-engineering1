@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a23c867-d7c1-4f13-817f-8ee914daa31f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/empty_project/features/registerTime.feature" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/features/registerTime.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/AssgnProjectManagerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/AssgnProjectManagerSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/registerTimeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/test/java/softwarehusetAS/registerTimeSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/empty_project/src/main/java/softwarehusetAS/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Software-engineering1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
