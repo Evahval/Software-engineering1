@@ -30,10 +30,9 @@ public class ProjectManager extends Employee{
 		return employee.checkAvailability1();
 	}
 	public void giveEmployeePermission(Employee employee) {
-		employee.givePermission();
+		givePermission(employee);
 	}
-	public void takeAwayEmployeePermission(Employee employee) {
-		employee.takeAwayPermission();
+	public void takeAwayEmployeePermission(Employee employee) { takeAwayPermission(employee);
 	}
 
 	public ArrayList<String> getReport(Project project){
@@ -44,4 +43,20 @@ public class ProjectManager extends Employee{
 		}
 		return report;
 	}
+
+	public void givePermission(Employee employee) {
+		if (employee.hasPermission() == false) {
+			employee.setHasPermission(true);
+			employee.setApprovedActivities(20);
+
+		}
+	}
+
+	public void takeAwayPermission(Employee employee) {
+		if (employee.hasPermission() == true) {
+			employee.setApprovedActivities(10);
+			employee.setHasPermission(false);
+		}
+	}
+
 }

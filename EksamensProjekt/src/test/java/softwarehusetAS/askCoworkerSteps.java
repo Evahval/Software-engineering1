@@ -31,14 +31,14 @@ public class askCoworkerSteps {
 	@When("the employee invites another employee {string} for assistance with an activity.")
 	public void the_employee_invites_another_employee_for_assistance_with_an_activity(String initials) {
 	    employee2 = company.addEmployee(initials);
-	    activity.assignActivity(employee2);
-		employee2.assignActivity(activity);
+	    employee1.askCoworker(employee2, activity);
+
 	}
 
 	@Then("the the other employee is added to the activity.")
 	public void the_the_other_employee_is_added_to_the_activity() {
-		assertTrue(activity.getEmployees().contains(employee2));
-	    assertTrue(employee2.getActivities().contains(activity));
+		assertTrue(activity.getEmployeesAssisting().contains(employee2));
+	    assertTrue(employee2.getAssisting().contains(activity));
 	}
 	
 	@When("the employee invites another employee {string} for assistance with an activity but the other employee is unavailable")
@@ -46,13 +46,12 @@ public class askCoworkerSteps {
     	    employee2 = company.addEmployee(initials);
     	    employee2.setActiveActivities(10);
     	    assertFalse(employee2.checkAvailability1());
-    	    activity.assignActivity(employee2);
-    		employee2.assignActivity(activity);
+    	    employee1.askCoworker(employee2, activity);
     	}
 
 	@Then("the the other employee is not assigned to the activity")
 	public void the_the_other_employee_is_not_assigned_to_the_activity() {
-		assertFalse(activity.getEmployees().contains(employee2));
-	    assertFalse(employee2.getActivities().contains(activity));
+		assertFalse(activity.getEmployeesAssisting().contains(employee2));
+	    assertFalse(employee2.getAssisting().contains(activity));
 	}
 }

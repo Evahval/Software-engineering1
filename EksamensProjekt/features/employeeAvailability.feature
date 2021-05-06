@@ -18,3 +18,16 @@ Scenario: Check for available employees to join a new activity
      And the employee is currently working on 10 activities
     And the employee has permission to work on more activities
     Then the system will assign the employee as available
+
+ Scenario: The project manager gives an employee permission to work on up to 20 activities.
+    Given the project manager "HNKJ" of the project "project" "123" wants to check if employee "AJFH" is available
+    And the employee is already assigned to 10 activities
+    And the employee is currently not permitted to work on more than 10 activities
+    When the project manager gives the employee permission to work on up to 20 activities
+    Then the employee is allowed to work on up to 20 activities
+
+ Scenario: The Project manager takes away the permission to work on 20 activities
+    Given a project manager "HNKJ" of the project "project" "123" wants to check if employee is available
+    And the employee "AJFH" has permission to work on more activities
+   When the project manager takes the permission away
+   Then the employee is only allowed to work on 10 activities

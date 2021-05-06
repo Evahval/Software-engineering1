@@ -43,11 +43,7 @@ public class Activity {
 	    }
 		
 	}
-	
-	public String toString() {
-		return name;
-	}
-	
+
 	public Double getHours() {
 		return hoursOnActivity;
 	}
@@ -70,16 +66,19 @@ public class Activity {
 		isActive = false;
 		for (Employee e : employees) {
 			e.getActivities().remove(this);
-			
 		}
-		
+
 	}
-	
+
 	public ArrayList<Employee> getEmployees(){
 		return employees;
 	}
-	
+
 	public ArrayList<Employee> getEmployeesAssisting(){
 		return employeesAssisting;
+	}
+
+	public void addAssisting(Employee employee){
+		employeesAssisting.add(employee);
 	}
 }

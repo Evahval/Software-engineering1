@@ -88,5 +88,43 @@ public class AvailabilitySteps {
 		projectManager.giveEmployeePermission(employee1);
 	   assertTrue(projectManager.checkEmployeeAvailability(employee1));
 	}
+	@Given("the employee is already assigned to {int} activities")
+	public void the_employee_is_already_assigned_to_activities(int int1) {
+		employee1.setActiveActivities(int1);
+		assertFalse(projectManager.checkEmployeeAvailability(employee1));
+	}
+
+	@Given("the employee is currently not permitted to work on more than {int} activities")
+	public void the_employee_is_currently_not_permitted_to_work_on_more_than_activities(int int1){
+		assertFalse(employee1.hasPermission());
+	}
+
+	@When("the project manager gives the employee permission to work on up to {int} activities")
+	public void the_project_manager_gives_the_employee_permission_to_work_on_up_to_activities(Integer int1) {
+		projectManager.giveEmployeePermission(employee1);
+	}
+
+	@Then("the employee is allowed to work on up to {int} activities")
+	public void the_employee_is_allowed_to_work_on_up_to_activities(Integer int1) {
+		assertTrue(employee1.hasPermission());
+	}
+
+	@Given("the employee {string} has permission to work on more activities")
+	public void the_employee_has_permission_to_work_on_more_activities(String string) {
+		employee1 = company.addEmployee(string);
+		projectManager.giveEmployeePermission(employee1);
+		assertTrue(employee1.hasPermission());
+	}
+
+	@When("the project manager takes the permission away")
+	public void the_project_manager_takes_the_permission_away() {
+		projectManager.takeAwayEmployeePermission(employee1);
+	}
+
+	@Then("the employee is only allowed to work on {int} activities")
+	public void the_employee_is_only_allowed_to_work_on_activities(Integer int1) {
+		assertFalse(employee1.hasPermission());
+	}
+
 
 }

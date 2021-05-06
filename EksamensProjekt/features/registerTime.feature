@@ -29,4 +29,4 @@ Scenario: the employee registers hours on an activity that they are assigned
     Given there is an employee "EHA" that does not have permission to have more activities
 	And the employee has 10 activities.
 	When the employee registers 3.5 hours on the activity "activity"
-	Then the system provides an error message "the hours has not been registered".
+	Then the system provides an error message "the hours has not been registered"

@@ -31,7 +31,7 @@ public class CreateReportSteps  {
         projectManager.addActivity(project,"Activity" + "" + i,true);
         }
     }
-    
+
     @When("The project manager creates a report with the weekly time usage")
     public void the_project_manager_creates_a_report_with_the_weekly_time_usage() {
         projectManager.getReport(project);
@@ -40,7 +40,6 @@ public class CreateReportSteps  {
 
     @Then("the system provides a report with weekly time usage for each activity")
     public void the_system_provides_a_report_with_weekly_time_usage_for_each_activity() {
-        System.out.println(projectManager.getReport(project));
         assertTrue(projectManager.getReport(project) != null);
     }
 }

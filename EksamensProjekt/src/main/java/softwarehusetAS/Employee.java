@@ -1,10 +1,9 @@
 package softwarehusetAS;
 
 import java.util.ArrayList;
-import softwarehusetAS.OperationNotAllowedException;
 
 public class Employee {
-	private double hours = 0;
+	private double hours1 = 0;
 	private String initials;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
 	private ArrayList<Activity> activitiesAssisting = new ArrayList<Activity>();
@@ -22,34 +21,18 @@ public class Employee {
 		} else {
 			double newHours = after - before;
 			activity.addToHours(newHours);
+			hours1 = newHours + hours1;
 		}
 	}
 	public void addHours(double hours, Activity activity) throws OperationNotAllowedException {
-		if(!(activity.isActivityActive() && this.checkAvailability1())){
+		if (!(activity.isActivityActive() && this.checkAvailability1())) {
 			throw new OperationNotAllowedException("");
-		} else{
+		} else {
 			activity.addToHours(hours);
+			hours1 = hours + hours1;
 		}
 	}
-	
-	 public boolean checkAvailability() {
-		int activeActivities = 0;
-		if (activities.isEmpty()) {
-			return true;
-		}
-		for (int i = 0 ; i < activities.size() ; i++) {
-			if (activities.get(i).isActivityActive()) {
-				activeActivities ++;
-			}
-		}
-		if (activeActivities < approvedActivities) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	
+
 	public void assignActivity(Activity activity){
 	if(this.checkAvailability1()){
 		activities.add(activity);
@@ -58,23 +41,11 @@ public class Employee {
        		}
 		}		
 	}
-	
-	public void givePermission() {
-		if (hasPermission == false) {
-			hasPermission = true;
-			approvedActivities = 20;
-			
-		}
+
+	public void setHasPermission(boolean permission){
+		hasPermission = permission;
 	}
-	
-	public void takeAwayPermission() {
-		if (hasPermission == true) {
-			approvedActivities = 10;
-			hasPermission = false;
-		}
-	
-	}
-	
+
 	public boolean hasPermission() {
 		return hasPermission;
 	}
@@ -88,19 +59,17 @@ public class Employee {
 	}
 	
 	public boolean checkAvailability1() {
-		
-		if (activeActivities1 < approvedActivities) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return activeActivities1 < approvedActivities;
 	}
 	
 	public String getInitials() {
 		return initials;
 	}
-	
+
+	public void setApprovedActivities(int int1){
+		approvedActivities = int1;
+	}
+
 	public int getApprovedActivities() {
 		return approvedActivities;
 	}
@@ -108,7 +77,19 @@ public class Employee {
 	public ArrayList<Activity> getActivities(){
 		return activities;
 	}
+
 	public ArrayList<Activity> getAssisting(){
 	    return activitiesAssisting;
+	}
+
+	public void askCoworker(Employee employee, Activity activity){
+		employee.addEmployeeAssisting(activity);
+	}
+
+	public void addEmployeeAssisting(Activity activity){
+		if (this.checkAvailability1()) {
+			activity.addAssisting(this);
+			this.activitiesAssisting.add(activity);
+		}
 	}
 }
