@@ -1,5 +1,5 @@
 package softwarehusetAS;
-
+import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Employee {
@@ -7,6 +7,8 @@ public class Employee {
 	private String initials;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
 	private ArrayList<Activity> activitiesAssisting = new ArrayList<Activity>();
+	private ArrayList<Activity> standardActivity = new ArrayList<>
+			(Arrays.asList(new Activity("sick",false), new Activity("maternity",false), new Activity("vacation",false), new Activity("education",false)));
 	private boolean hasPermission = false;
 	private int activeActivities1 = 0;
 	private int approvedActivities = 10;
@@ -14,10 +16,10 @@ public class Employee {
 	public Employee(String initials) {
 		this.initials = initials;
 	}
-	
+
 	public void updateHours(double before, double after, Activity activity) throws OperationNotAllowedException  {
 		if (!(activity.isActivityActive() && this.checkAvailability1())) {
-				throw new OperationNotAllowedException(" ");
+				throw new OperationNotAllowedException("");
 		} else {
 			double newHours = after - before;
 			activity.addToHours(newHours);
@@ -40,6 +42,25 @@ public class Employee {
         			activeActivities1++;
        		}
 		}		
+	}
+
+	public Activity standardActivity(String name, double hours, int startWeek, int endWeek) throws OperationNotAllowedException{
+		Activity standActivity=null;
+		for (Activity a : standardActivity) {
+			if (a.getName().equals(name)) {
+				standActivity = a;
+			}
+		}
+		if(standActivity==null){
+			throw new OperationNotAllowedException("Enter valid standard activity");
+		}
+		standActivity.setIsActive();
+		standActivity.setStartWeek(startWeek);
+		standActivity.setEndWeek(endWeek);
+
+		standActivity.addToHours(hours);
+
+		return standActivity;
 	}
 
 	public void setHasPermission(boolean permission){

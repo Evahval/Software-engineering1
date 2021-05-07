@@ -1,14 +1,18 @@
-Feature : Standard Activities
-  Description : Each project has a set of standard activities (Vacation, sick leave, educational courses etc.), that the project manager can assign an employee to if necessary.
-    Actors : Project manager
+Feature: Standard Activities
+ Description : Each project has a set of standard activities (Vacation, sick leave, educational courses etc.), that the project manager can assign an employee to if necessary.
+   Actors : Project manager
 
-Scenario : The standard activities are added in a new project
-    Given Softwarehuset A/S creates a new project with name "test" and year "2003".
-    When the project is created with name and serial number
-    Then the standard activities "vacation", "Sick leave" and "educational courses" are added to the project.
+Scenario: An employee tries to register one day spent on a standard activity
+    Given an employee "VHS"
+    When the employee has typed in the reason "sick" and week 14 and the number of hours 8.0
+    Then the employee will be registered on the activity in week 14
 
-Scenario : Project manager tries to add standard activities to a new project
-    Given a new project with name "test" and year "2003" is created.
-    And the standard activities "vacation", "Sick leave" and "educational courses" activities are created
-    And the project manager tries to create a standard activity.
-    Then the system will provide an error-message, stating the standard activities have already been created.
+Scenario: An employee tries to register more than one day spent on a standard activity
+    Given an employee "VHS"
+    When the employee has typed in the reason "sick" and the start and end week 14 15 and the number of hours 37.0
+    Then the employee will be registered on the activity in week 14 to 15
+
+  Scenario: an employee tries to register time on non-standard activity
+    Given an employee "VHS"
+    When the employee tries to register 24.0 hours on "Partying" in week 4
+    Then the error message "Enter valid standard activity" is displayed

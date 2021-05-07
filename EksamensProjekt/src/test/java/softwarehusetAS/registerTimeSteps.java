@@ -132,7 +132,7 @@ public class registerTimeSteps {
         activity1 = new Activity(activity, true);
     }
 
-	@Then("the system provides an error message {string}.")
+	@Then("the system provides an error message {string}")
 	public void the_system_provides_an_error_message(String string) throws Exception{
 			assertEquals(errorMessage, this.errorMessage);
 	}
