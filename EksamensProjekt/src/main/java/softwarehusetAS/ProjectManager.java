@@ -23,7 +23,6 @@ public class ProjectManager extends Employee{
 		if (checkEmployeeAvailability(employee)) {
 			activity.assignActivity(employee);
 			employee.assignActivity(activity);
-
 			assert activity.getEmployees().contains(employee);
 			assert employee.getActivities().contains(activity);
 		}
@@ -32,7 +31,6 @@ public class ProjectManager extends Employee{
 			assert !(activity.getEmployees().contains(employee));
 			assert !(employee.getActivities().contains(activity));
 		}
-
 	}
 	
 	public boolean checkEmployeeAvailability(Employee employee) {

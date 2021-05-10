@@ -43,7 +43,7 @@ public class registerTimeSteps {
 	@When("the employee registers that they used {double} hours on the activity that day")
 	public void the_employee_registers_that_they_used_hours_on_the_activity_that_day(double double1) {
 		try {
-			employee.addHours(double1, activity1,project);
+			employee.addHours(double1, activity1,project, company);
 		} catch (OperationNotAllowedException e) {
 			errorMessage.setErrorMessage(e.getMessage());
 		}
@@ -64,12 +64,12 @@ public class registerTimeSteps {
     @When("the employee updates the hours from {double} to {double} on the activity that day")
     public void the_employee_updates_the_hours_from_to_on_the_activity_that_day(double before, double after) {
 		try {
-			employee.addHours(before, activity1, project);
+			employee.addHours(before, activity1, project, company);
 		} catch (OperationNotAllowedException e) {
 			errorMessage.setErrorMessage(e.getMessage());
 		}
 		try {
-			employee.updateHours(before,after, activity1, project);
+			employee.updateHours(before,after, activity1, project, company);
 		} catch (OperationNotAllowedException e) {
 			errorMessage.setErrorMessage(e.getMessage());
 		}
@@ -99,7 +99,7 @@ public class registerTimeSteps {
 	@When("the employee registers {double} hours.")
 		public void the_employee_registers_hours(double hours) {
 		try {
-			employee.addHours(hours, activity1, project);
+			employee.addHours(hours, activity1, project, company);
 		} catch (OperationNotAllowedException e) {
 			errorMessage.setErrorMessage(e.getMessage());
 		}
@@ -148,7 +148,7 @@ public class registerTimeSteps {
     public void the_employee_registers_hours_on_the_activity(double hours, String activity) throws OperationNotAllowedException {
         try{
         	activity1 = manager1.addActivity(project, activity,true, company);
-			employee.addHours(hours,activity1, project);
+			employee.addHours(hours,activity1, project, company);
 		}
         catch (OperationNotAllowedException e){
 

@@ -17,8 +17,9 @@ public class Employee {
 		this.initials = initials;
 	}
 
-	public void updateHours(double before, double after, Activity activity, Project project) throws OperationNotAllowedException  {
+	public void updateHours(double before, double after, Activity activity, Project project, Company company) throws OperationNotAllowedException  {
 		assert project.getActivity().contains(activity);
+		assert company.getEmployees().contains(this);
 		if (!(activity.isActivityActive())) {
 				throw new OperationNotAllowedException("Activity is not active");
 		} else {
@@ -28,8 +29,9 @@ public class Employee {
 		}
 		assert activity.getHours().equals(hours1);
 	}
-	public void addHours(double hours, Activity activity, Project project) throws OperationNotAllowedException {
+	public void addHours(double hours, Activity activity, Project project, Company company) throws OperationNotAllowedException {
 		assert project.getActivity().contains(activity);
+		assert company.getEmployees().contains(this);
 		if (!(activity.isActivityActive())) {
 			throw new OperationNotAllowedException("Activity is not active");
 		} else {
