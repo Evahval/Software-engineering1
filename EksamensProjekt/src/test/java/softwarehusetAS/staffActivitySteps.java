@@ -24,7 +24,7 @@ public class staffActivitySteps {
 		project1 = company.addProject(projectName, projectNumber);
 	    employeeProjectManager = company.addEmployee(managerName);
 	    projectManager = project1.setManager(employeeProjectManager);
-	    activity =  projectManager.addActivity(project1, activityName, true, company);
+	    activity =  projectManager.addActivity(project1, activityName, true);
 	}
 
 	@Given("an employee {string} is available")

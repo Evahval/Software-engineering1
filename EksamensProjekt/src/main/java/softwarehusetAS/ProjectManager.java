@@ -8,11 +8,9 @@ public class ProjectManager extends Employee{
 		
 	}
 	
-	public Activity addActivity(Project project, String activityName, boolean isActive, Company company) {
-		assert company.getProject().contains(project);
+	public Activity addActivity(Project project, String activityName, boolean isActive) {
 		Activity activity = new Activity(activityName,isActive);
 		project.addActivityProject(activity);
-		assert project.getActivity().contains(activity) ;
 		return activity;
 	}
 	
