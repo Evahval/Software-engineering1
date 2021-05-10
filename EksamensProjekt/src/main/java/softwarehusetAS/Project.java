@@ -7,21 +7,11 @@ public class Project {
 	private String projectNumber;
 	private ProjectManager projectManager;
 	private Employee projectManager1;
-	private int startWeek;
-	private int endWeek;
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
 	
 	public Project(String projectName, String projectNumber) {
 		this.projectName = projectName;
 		this.projectNumber = projectNumber;
-	}
-	
-	public void setStartWeek(int startWeek) {
-		this.startWeek = startWeek;
-	}
-	
-	public void setEndWeek(int endWeek) {
-		this.endWeek = endWeek;
 	}
 	
 	public ArrayList<Activity> getActivity() {
@@ -50,14 +40,7 @@ public class Project {
 	public String getProjectNumber() {
 		return projectNumber;
 	}
+
 	
-	public int getStartWeek() {
-		return startWeek;
-	}
-	
-	public int getEndWeek() {
-		return endWeek;
-	}
-	
-	
+
 }
