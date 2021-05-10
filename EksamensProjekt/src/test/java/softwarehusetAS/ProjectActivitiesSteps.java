@@ -30,7 +30,7 @@ public class ProjectActivitiesSteps {
 
 	@When("the project mangager creates an activity {string}")
 	public void the_project_mangager_creates_an_activity(String activityName) {
-	   activity =  projectManager.addActivity(project1, activityName, true);
+	   activity =  projectManager.addActivity(project1, activityName, true, company);
 	}
 
 	@Then("an activity is created")
@@ -40,7 +40,7 @@ public class ProjectActivitiesSteps {
 
 	@Given("the project manager has added an activity {string}")
 	public void the_project_manager_has_added_an_activity(String activityName) {
-	    activity = projectManager.addActivity(project1, activityName, true);
+	    activity = projectManager.addActivity(project1, activityName, true, company);
 	}
 
 	@When("the project manager add a beginning week {int} and an ending week {int}")

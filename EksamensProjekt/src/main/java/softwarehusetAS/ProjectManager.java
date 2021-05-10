@@ -8,21 +8,31 @@ public class ProjectManager extends Employee{
 		
 	}
 	
-	public Activity addActivity(Project project, String activityName, boolean isActive) {
+	public Activity addActivity(Project project, String activityName, boolean isActive, Company company) {
+		assert company.getProject().contains(project);
 		Activity activity = new Activity(activityName,isActive);
 		project.addActivityProject(activity);
+		assert project.getActivity().contains(activity);
 		return activity;
+
 	}
 	
-	public void staffActivity(Employee employee, Activity activity) {
+	public void staffActivity(Employee employee, Activity activity, Company company, Project project) {
+		assert company.getEmployees().contains(employee);
+		assert project.getActivity().contains(activity);
 		if (checkEmployeeAvailability(employee)) {
 			activity.assignActivity(employee);
 			employee.assignActivity(activity);
-			
+
+			assert activity.getEmployees().contains(employee);
+			assert employee.getActivities().contains(activity);
 		}
 		else {
 			System.out.println("Employee is unavailable");
+			assert !(activity.getEmployees().contains(employee));
+			assert !(employee.getActivities().contains(activity));
 		}
+
 	}
 	
 	public boolean checkEmployeeAvailability(Employee employee) {

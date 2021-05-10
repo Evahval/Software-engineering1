@@ -28,7 +28,7 @@ public class CreateReportSteps  {
     @Given("the project has {int} number of activities")
     public void the_project_has_number_of_activities(int activities) {
     for (int i = 1; i <= activities; i++){
-        projectManager.addActivity(project,"Activity" + "" + i,true);
+        projectManager.addActivity(project,"Activity" + "" + i,true,company);
         }
     }
 

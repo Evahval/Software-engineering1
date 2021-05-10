@@ -24,7 +24,7 @@ public class staffActivitySteps {
 		project1 = company.addProject(projectName, projectNumber);
 	    employeeProjectManager = company.addEmployee(managerName);
 	    projectManager = project1.setManager(employeeProjectManager);
-	    activity =  projectManager.addActivity(project1, activityName, true);
+	    activity =  projectManager.addActivity(project1, activityName, true, company);
 	}
 
 	@Given("an employee {string} is available")
@@ -35,7 +35,7 @@ public class staffActivitySteps {
 
 	@When("the project manager assigns the employee to the activity")
 	public void the_project_manager_assigns_the_employee_to_the_activity() {
-	    projectManager.staffActivity(employee, activity);
+	    projectManager.staffActivity(employee, activity,company,project1);
 	}
 
 	@Then("the employee is assigned to the activity")
