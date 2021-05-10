@@ -33,6 +33,7 @@ public class registerTimeSteps {
 		activity1 = new Activity(string, true);
 		activity1.assignActivity(employee);
 		employee.assignActivity(activity1);
+
 	}
 
 	@When("the employee registers that they used {double} hours on the activity that day")

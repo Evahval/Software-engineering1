@@ -3,15 +3,16 @@ package softwarehusetAS;
 import java.util.ArrayList;
 
 public class ProjectManager extends Employee{
-
 	public ProjectManager(String initials) {
 		super(initials);
 		
 	}
 	
-	public Activity addActivity(Project project, String activityName, boolean isActive) {
+	public Activity addActivity(Project project, String activityName, boolean isActive, Company company) {
+		assert company.getProject().contains(project);
 		Activity activity = new Activity(activityName,isActive);
 		project.addActivityProject(activity);
+		assert project.getActivity().contains(activity) ;
 		return activity;
 	}
 	
