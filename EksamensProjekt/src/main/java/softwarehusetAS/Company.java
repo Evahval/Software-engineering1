@@ -1,5 +1,6 @@
 package softwarehusetAS;
 import java.util.*;
+//Skrevet af Andreas
 public class Company {
 
 	private ArrayList<Project> projects = new ArrayList<Project>();

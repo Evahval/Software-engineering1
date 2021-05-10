@@ -1,6 +1,6 @@
 package softwarehusetAS;
 import java.util.*;
-
+//Skrevet af Amalie H
 public class Project {
 
 	private String projectName;

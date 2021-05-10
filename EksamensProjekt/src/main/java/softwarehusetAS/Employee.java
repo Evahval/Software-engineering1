@@ -1,7 +1,7 @@
 package softwarehusetAS;
 import java.util.Arrays;
 import java.util.ArrayList;
-
+//Skrevet af Amalie T
 public class Employee {
 	private double hours1 = 0;
 	private String initials;
